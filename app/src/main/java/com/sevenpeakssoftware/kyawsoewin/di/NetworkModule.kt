@@ -1,13 +1,10 @@
-package com.myanthai.agent.di
+package com.sevenpeakssoftware.kyawsoewin.di
 
-import android.content.Context
-import com.myanthai.agent.BuildConfig
+import com.sevenpeakssoftware.kyawsoewin.BuildConfig
 import com.sevenpeakssoftware.kyawsoewin.network.ApiService
-import com.myanthai.agent.network.TokenInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -34,16 +31,9 @@ class NetworkModule {
         return retrofit.build().create(ApiService::class.java)
     }
 
-    @Singleton
-    @Provides
-    fun provideTokenInterceptor(
-        @ApplicationContext context: Context
-    ) =
-        TokenInterceptor(context = context)
-
     @Provides
     @Singleton
-    fun providesLoggingInterceptor(tokenInterceptor: TokenInterceptor): OkHttpClient {
+    fun providesLoggingInterceptor(): OkHttpClient {
         val httpInterceptor = HttpLoggingInterceptor()
         if (BuildConfig.DEBUG) {
             httpInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -53,7 +43,6 @@ class NetworkModule {
 
         return OkHttpClient.Builder()
             .addInterceptor(httpInterceptor)
-            .addInterceptor(tokenInterceptor)
             .build()
     }
 }
