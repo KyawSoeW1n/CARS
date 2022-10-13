@@ -10,7 +10,7 @@ class CarListVO constructor(
     ) {
 
         fun carList(carListResponse: CarListResponse) = apply {
-            carListResponse.content.map {
+            carList.addAll(carListResponse.content.map {
                 CarItemVO(
                     id = it.id,
                     dateTime = it.dateTime,
@@ -18,7 +18,7 @@ class CarListVO constructor(
                     title = it.title,
                     ingress = it.ingress
                 )
-            }
+            })
         }
 
         fun build() = CarListVO(carList = carList)

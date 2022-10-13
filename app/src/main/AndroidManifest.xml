@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sevenpeakssoftware.kyawsoewin">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".CarApp"
         android:allowBackup="true"

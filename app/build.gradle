@@ -23,7 +23,7 @@ android {
 
     productFlavors {
         flavorDimensions "appModule"
-        def BASE_DEV_URL = "\"http://45.32.112.93/TLotto/public/api/\""
+        def BASE_DEV_URL = "\" https://www.apphusetreach.no/application/119267/\""
 
         dev {
             dimension "appModule"
