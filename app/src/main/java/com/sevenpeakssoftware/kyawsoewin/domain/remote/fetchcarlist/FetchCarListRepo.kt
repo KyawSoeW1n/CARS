@@ -1,6 +1,6 @@
 package com.sevenpeakssoftware.kyawsoewin.domain.remote.fetchcarlist
 
-import com.sevenpeakssoftware.kyawsoewin.network.response.CarListResponse
+import com.sevenpeakssoftware.kyawsoewin.network.response.getcar.CarListResponse
 
 
 interface FetchCarListRepo {

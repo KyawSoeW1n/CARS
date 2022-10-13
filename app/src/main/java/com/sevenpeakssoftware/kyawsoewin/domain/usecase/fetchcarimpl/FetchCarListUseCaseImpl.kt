@@ -26,11 +26,11 @@ class FetchCarListUseCaseImpl @Inject constructor(
 
             when (response) {
                 is UseCaseState.Success -> {
-                    response.successData?.let { response ->
-                        if (response.status == "success") {
+                    response.successData?.let { data ->
+                        if (data.status == "success") {
                             emit(
                                 ViewState.Success(
-                                    carListMapper.mapFromResponse(response)
+                                    carListMapper.mapFromResponse(data)
                                 )
                             )
                         } else {

@@ -1,7 +1,7 @@
 package com.sevenpeakssoftware.kyawsoewin.data.mapper
 
 import com.sevenpeakssoftware.kyawsoewin.data.model.fetchcarlist.CarListVO
-import com.sevenpeakssoftware.kyawsoewin.network.response.CarListResponse
+import com.sevenpeakssoftware.kyawsoewin.network.response.getcar.CarListResponse
 
 class CarListMapper {
     fun mapFromResponse(

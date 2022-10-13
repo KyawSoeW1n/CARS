@@ -15,6 +15,4 @@ sealed class ViewState<out T> {
     object ResourceNotFound : ViewState<Nothing>()
 
     object ServerError : ViewState<Nothing>()
-
-    object ResetState : ViewState<Nothing>()
 }
