@@ -1,0 +1,84 @@
+ext {
+    constraintLayout = "2.1.3"
+    appCompact = "1.4.1"
+    material = "1.5.0"
+    navigationComponent = "2.4.1"
+    coil = "2.0.0-rc03"
+    recyclerView = "1.2.1"
+    coroutine = "1.6.4"
+    flexBox = "3.0.0"
+    lottie = "5.1.1"
+    timber = "5.0.1"
+    shimmerEffect = "0.5.0"
+    dimen = "1.0.6"
+
+    roomVersion = "2.4.2"
+    dataStore = "1.0.0"
+    coroutineAutoDispose = "0.3.1"
+
+    liveDataktx = "2.4.1"
+    lifecycleScopektx = "2.3.1"
+    viewModelScopeKtx = "2.3.1"
+    coroutine = "1.6.0"
+
+    retrofit = "2.9.0"
+    okHttp = "4.9.1"
+
+    workManager = "2.7.1"
+    rxKotlin = "2.3.0"
+    rxAndroid = "2.1.1"
+
+    leakCanary = "2.9.1"
+
+    hilt = "2.42"
+    hiltFragment = "1.0.0"
+    metaData = "0.5.0"
+
+    debugWorkDependencies = [
+            "leakCanary": "com.squareup.leakcanary:leakcanary-android:${leakCanary}"
+    ]
+
+    mobileUiDependencies = [
+            dimen             : "com.intuit.sdp:sdp-android:${dimen}",
+            shimmerEffect     : "com.facebook.shimmer:shimmer:${shimmerEffect}",
+            coil              : "io.coil-kt:coil:${coil}",
+            coilSVG           : "io.coil-kt:coil-svg:${coil}",
+            constraintLayout  : "androidx.constraintlayout:constraintlayout:${constraintLayout}",
+            appCompact        : "androidx.appcompat:appcompat:${appCompact}",
+            material          : "com.google.android.material:material:${material}",
+            navigationFragment: "androidx.navigation:navigation-fragment-ktx:${navigationComponent}",
+            navigationUI      : "androidx.navigation:navigation-ui-ktx:${navigationComponent}",
+            timber            : "com.jakewharton.timber:timber:${timber}",
+            dataStore         : "androidx.datastore:datastore-preferences:${dataStore}",
+            recyclerView      : "androidx.recyclerview:recyclerview:${recyclerView}",
+            coroutine         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutine}",
+            rxKotlin          : "io.reactivex.rxjava2:rxkotlin:${rxKotlin}",
+            rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroid}",
+            hilt              : "com.google.dagger:hilt-android:${hilt}",
+            hiltCompiler      : "com.google.dagger:hilt-android-compiler:${hilt}",
+            hiltFragment      : "androidx.hilt:hilt-navigation-fragment:${hiltFragment}"
+    ]
+
+    presentationDependencies = [
+            liveDataKtx : "androidx.lifecycle:lifecycle-livedata-ktx:${liveDataktx}",
+            runTimeKtx  : "androidx.lifecycle:lifecycle-runtime-ktx:${lifecycleScopektx}",
+            viewModelKtx: "androidx.lifecycle:lifecycle-viewmodel-ktx:${viewModelScopeKtx}"
+    ]
+
+    remoteDependencies = [
+            retrofit   : "com.squareup.retrofit2:retrofit:${retrofit}",
+            gson       : "com.squareup.retrofit2:converter-gson:${retrofit}",
+            interceptor: "com.squareup.okhttp3:logging-interceptor:${okHttp}",
+            okHttp     : "com.squareup.okhttp3:okhttp:${okHttp}",
+    ]
+
+    cacheDependencies = [
+            "room"        : "androidx.room:room-runtime:$roomVersion",
+            "roomCompiler": "androidx.room:room-compiler:$roomVersion",
+            "roomktx"     : "androidx.room:room-ktx:$roomVersion"
+    ]
+
+    coreDependencies = [
+            metaData: "org.jetbrains.kotlinx:kotlinx-metadata-jvm:${metaData}"
+    ]
+}
