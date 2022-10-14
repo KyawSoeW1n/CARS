@@ -1,6 +1,7 @@
 package com.sevenpeakssoftware.kyawsoewin.di
 
-import com.sevenpeakssoftware.kyawsoewin.data.mapper.CarListMapper
+import com.sevenpeakssoftware.kyawsoewin.data.cache.mapper.CacheCarMapper
+import com.sevenpeakssoftware.kyawsoewin.data.remote.mapper.CarListMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,6 +13,10 @@ import dagger.hilt.android.scopes.ViewModelScoped
 class MapperModule {
     @Provides
     @ViewModelScoped
-    fun provideMCarListMapper() = CarListMapper()
+    fun provideCarListMapper() = CarListMapper()
+
+    @Provides
+    @ViewModelScoped
+    fun provideCacheCarMapper() = CacheCarMapper()
 
 }

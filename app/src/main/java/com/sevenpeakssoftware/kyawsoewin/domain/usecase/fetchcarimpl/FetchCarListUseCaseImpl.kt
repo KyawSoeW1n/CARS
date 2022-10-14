@@ -1,8 +1,9 @@
 package com.sevenpeakssoftware.kyawsoewin.domain.usecase.fetchcarimpl
 
 import android.content.Context
-import com.sevenpeakssoftware.kyawsoewin.data.mapper.CarListMapper
-import com.sevenpeakssoftware.kyawsoewin.data.model.fetchcarlist.CarListVO
+import com.sevenpeakssoftware.kyawsoewin.data.cache.impl.insertcar.InsertCarListImpl
+import com.sevenpeakssoftware.kyawsoewin.data.remote.mapper.CarListMapper
+import com.sevenpeakssoftware.kyawsoewin.data.remote.model.fetchcarlist.CarListVO
 import com.sevenpeakssoftware.kyawsoewin.domain.remote.fetchcarlist.FetchCarListRepo
 import com.sevenpeakssoftware.kyawsoewin.domain.usecase.UseCaseState
 import com.sevenpeakssoftware.kyawsoewin.network.safeApiCall
@@ -15,6 +16,7 @@ import javax.inject.Inject
 class FetchCarListUseCaseImpl @Inject constructor(
     private val FetchCarListRepo: FetchCarListRepo,
     private val carListMapper: CarListMapper,
+    private val insertCarListImpl: InsertCarListImpl,
     @ApplicationContext private val context: Context,
 ) : FetchCarListUseCase {
     override fun getCarList(): Flow<ViewState<CarListVO>> =
@@ -28,11 +30,9 @@ class FetchCarListUseCaseImpl @Inject constructor(
                 is UseCaseState.Success -> {
                     response.successData?.let { data ->
                         if (data.status == "success") {
-                            emit(
-                                ViewState.Success(
-                                    carListMapper.mapFromResponse(data)
-                                )
-                            )
+                            val mapResponse = carListMapper.mapFromResponse(data)
+                            insertCarListImpl.insertCarList(mapResponse.carList)
+                            emit(ViewState.Success(mapResponse))
                         } else {
                             emit(ViewState.Error("Error"))
                         }

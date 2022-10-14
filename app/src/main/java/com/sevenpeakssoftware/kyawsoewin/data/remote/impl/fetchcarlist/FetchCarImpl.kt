@@ -1,4 +1,4 @@
-package com.sevenpeakssoftware.kyawsoewin.data.impl.fetchcarlist
+package com.sevenpeakssoftware.kyawsoewin.data.remote.impl.fetchcarlist
 
 import com.sevenpeakssoftware.kyawsoewin.domain.remote.fetchcarlist.FetchCarListRepo
 import com.sevenpeakssoftware.kyawsoewin.network.ApiService

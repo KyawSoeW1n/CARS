@@ -1,6 +1,6 @@
-package com.sevenpeakssoftware.kyawsoewin.data.mapper
+package com.sevenpeakssoftware.kyawsoewin.data.remote.mapper
 
-import com.sevenpeakssoftware.kyawsoewin.data.model.fetchcarlist.CarListVO
+import com.sevenpeakssoftware.kyawsoewin.data.remote.model.fetchcarlist.CarListVO
 import com.sevenpeakssoftware.kyawsoewin.network.response.getcar.CarListResponse
 
 class CarListMapper {

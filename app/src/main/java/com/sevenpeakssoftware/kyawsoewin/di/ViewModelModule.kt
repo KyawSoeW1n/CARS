@@ -1,6 +1,10 @@
 package com.sevenpeakssoftware.kyawsoewin.di
 
-import com.sevenpeakssoftware.kyawsoewin.data.impl.fetchcarlist.FetchCarImpl
+import com.sevenpeakssoftware.kyawsoewin.data.cache.impl.getcar.GetCarListImpl
+import com.sevenpeakssoftware.kyawsoewin.data.cache.impl.getcar.GetCarListRepo
+import com.sevenpeakssoftware.kyawsoewin.data.cache.impl.insertcar.InsertCarListImpl
+import com.sevenpeakssoftware.kyawsoewin.data.cache.impl.insertcar.InsertCarListRepo
+import com.sevenpeakssoftware.kyawsoewin.data.remote.impl.fetchcarlist.FetchCarImpl
 import com.sevenpeakssoftware.kyawsoewin.domain.remote.fetchcarlist.FetchCarListRepo
 import dagger.Binds
 import dagger.Module
@@ -15,4 +19,12 @@ abstract class ViewModelModule {
     @Binds
     @ViewModelScoped
     abstract fun bindFetchCarImpl(fetchCarImpl: FetchCarImpl): FetchCarListRepo
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindInsertCarListImpl(insertCarListImpl: InsertCarListImpl): InsertCarListRepo
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindGetCarListImpl(insertCarListImpl: GetCarListImpl): GetCarListRepo
 }
