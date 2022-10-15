@@ -1,6 +1,5 @@
 package com.sevenpeakssoftware.kyawsoewin.di
 
-import com.sevenpeakssoftware.kyawsoewin.data.cache.mapper.CacheCarMapper
 import com.sevenpeakssoftware.kyawsoewin.data.remote.mapper.CarListMapper
 import dagger.Module
 import dagger.Provides
@@ -14,9 +13,4 @@ class MapperModule {
     @Provides
     @ViewModelScoped
     fun provideCarListMapper() = CarListMapper()
-
-    @Provides
-    @ViewModelScoped
-    fun provideCacheCarMapper() = CacheCarMapper()
-
 }

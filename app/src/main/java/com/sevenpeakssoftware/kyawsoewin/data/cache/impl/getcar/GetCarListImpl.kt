@@ -1,7 +1,6 @@
 package com.sevenpeakssoftware.kyawsoewin.data.cache.impl.getcar
 
 import com.sevenpeakssoftware.kyawsoewin.data.cache.dao.CarDao
-import com.sevenpeakssoftware.kyawsoewin.data.cache.entity.CacheCar
 import com.sevenpeakssoftware.kyawsoewin.data.remote.model.fetchcarlist.CarItemVO
 import javax.inject.Inject
 

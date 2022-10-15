@@ -5,8 +5,7 @@ import android.text.format.DateFormat
 import com.sevenpeakssoftware.kyawsoewin.data.cache.dao.CarDao
 import com.sevenpeakssoftware.kyawsoewin.data.cache.entity.CacheCar
 import com.sevenpeakssoftware.kyawsoewin.data.remote.model.fetchcarlist.CarItemVO
-import com.sevenpeakssoftware.kyawsoewin.extensions.convertCarDate
-import com.sevenpeakssoftware.kyawsoewin.extensions.convertCarDate24HourFormat
+import com.sevenpeakssoftware.kyawsoewin.extensions.*
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
@@ -21,9 +20,17 @@ class InsertCarListImpl @Inject constructor(
                 image = it.image,
                 ingress = it.ingress,
                 dateTime = if (DateFormat.is24HourFormat(context)) {
-                    convertCarDate24HourFormat(it.dateTime)
+                    if (isWithinCurrentYear(it.dateTime)) {
+                        convertDDMMMMHHMM(it.dateTime)
+                    } else {
+                        convertDDMMMMYYYYHHMM(it.dateTime)
+                    }
                 } else {
-                    convertCarDate(it.dateTime)
+                    if (isWithinCurrentYear(it.dateTime)) {
+                        convertDDMMMMHHMMA(it.dateTime)
+                    } else {
+                        convertDDMMMMYYYYHHMMA(it.dateTime)
+                    }
                 },
                 title = it.title
             )

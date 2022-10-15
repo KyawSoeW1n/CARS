@@ -2,7 +2,7 @@
 <resources>
 
     <style name="TitleTextStyle">
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">20sp</item>
         <item name="android:lineSpacingExtra">8sp</item>
@@ -10,7 +10,7 @@
     </style>
 
     <style name="TextStyle3">
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingExtra">6sp</item>
@@ -18,7 +18,7 @@
     </style>
 
     <style name="TextStyle2">
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingExtra">6sp</item>

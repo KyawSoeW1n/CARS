@@ -6,7 +6,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.sevenpeakssoftware.kyawsoewin.data.cache.DatabaseConstants
 import com.sevenpeakssoftware.kyawsoewin.data.cache.entity.CacheCar
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CarDao {

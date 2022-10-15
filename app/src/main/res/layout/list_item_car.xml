@@ -58,8 +58,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/spacing_8dp"
-            android:maxLines="2"
-            tools:text="@tools:sample/lorem/random" />
+            android:maxLines="1"
+            tools:text="@tools:sample/date/ddmmyy" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_ingress"

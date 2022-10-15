@@ -3,6 +3,7 @@ package com.sevenpeakssoftware.kyawsoewin.ui.fragment
 import android.view.LayoutInflater
 import androidx.fragment.app.viewModels
 import com.sevenpeakssoftware.kyawsoewin.databinding.FragmentCarListBinding
+import com.sevenpeakssoftware.kyawsoewin.extensions.removeAdapter
 import com.sevenpeakssoftware.kyawsoewin.extensions.setUpCustomAdapter
 import com.sevenpeakssoftware.kyawsoewin.extensions.showLog
 import com.sevenpeakssoftware.kyawsoewin.extensions.showToast
@@ -62,9 +63,7 @@ class CarFragment : BaseViewBindingFragment<FragmentCarListBinding>() {
     }
 
     override fun onDestroyView() {
-        binding.rvCar.apply {
-            adapter = null
-        }
+        binding.rvCar.removeAdapter()
         super.onDestroyView()
     }
 }
