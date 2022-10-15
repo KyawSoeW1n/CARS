@@ -13,6 +13,8 @@
         <action
             android:id="@+id/action_navigation_splash_to_avigation_car_list"
             app:destination="@id/navigation_car_list"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_splash"
             app:popUpToInclusive="true" />
     </fragment>
 

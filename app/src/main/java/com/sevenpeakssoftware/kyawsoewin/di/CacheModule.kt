@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.room.Room
 import com.sevenpeakssoftware.kyawsoewin.data.cache.CarDatabase
 import com.sevenpeakssoftware.kyawsoewin.data.cache.DatabaseConstants
-import com.sevenpeakssoftware.kyawsoewin.data.cache.dao.CarDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DatabaseModule {
+class CacheModule {
     @Singleton
     @Provides
     fun provideYourDatabase(
@@ -23,7 +22,7 @@ class DatabaseModule {
         app,
         CarDatabase::class.java,
         DatabaseConstants.DB_NAME
-    ).build() // The reason we can construct a database for the repo
+    ).build()
 
     @Singleton
     @Provides
