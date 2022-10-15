@@ -6,7 +6,7 @@ import com.sevenpeakssoftware.kyawsoewin.databinding.FragmentCarListBinding
 import com.sevenpeakssoftware.kyawsoewin.extensions.setUpCustomAdapter
 import com.sevenpeakssoftware.kyawsoewin.extensions.showLog
 import com.sevenpeakssoftware.kyawsoewin.extensions.showToast
-import com.sevenpeakssoftware.kyawsoewin.presentation.GetCarListViewModel
+import com.sevenpeakssoftware.kyawsoewin.presentation.CarListViewModel
 import com.sevenpeakssoftware.kyawsoewin.presentation.ViewState
 import com.sevenpeakssoftware.kyawsoewin.ui.adapter.CarListAdapter
 import com.sevenpeakssoftware.kyawsoewin.ui.base.fragment.BaseViewBindingFragment
@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class CarFragment : BaseViewBindingFragment<FragmentCarListBinding>() {
 
-    private val getCarListViewModel: GetCarListViewModel by viewModels()
+    private val carListViewModel: CarListViewModel by viewModels()
     override fun bindView(inflater: LayoutInflater): FragmentCarListBinding =
         FragmentCarListBinding.inflate(inflater)
 
@@ -31,30 +31,30 @@ class CarFragment : BaseViewBindingFragment<FragmentCarListBinding>() {
     override fun observe() {
         super.observe()
 
-        getCarListViewModel.cacheCarListLiveData.observe(viewLifecycleOwner) {
+        carListViewModel.cacheCarListLiveData.observe(viewLifecycleOwner) {
             carListAdapter.submitList(it)
         }
-        getCarListViewModel.carListLiveData.observe(viewLifecycleOwner) {
+        carListViewModel.carListLiveData.observe(viewLifecycleOwner) {
             when (it) {
                 is ViewState.Success -> {
-                    getCarListViewModel.getCacheList()
+                    carListViewModel.getCacheList()
                 }
                 is ViewState.NetworkError -> {
-                    getCarListViewModel.getCacheList()
+                    carListViewModel.getCacheList()
                 }
                 is ViewState.Loading -> {
                 }
                 is ViewState.ServerError -> {
                     showToast("Server Error")
-                    getCarListViewModel.getCacheList()
+                    carListViewModel.getCacheList()
                 }
                 is ViewState.ResourceNotFound -> {
                     showToast("Resource Not Found Error")
-                    getCarListViewModel.getCacheList()
+                    carListViewModel.getCacheList()
                 }
                 is ViewState.Error -> {
                     showToast(it.message)
-                    getCarListViewModel.getCacheList()
+                    carListViewModel.getCacheList()
                 }
                 is ViewState.Unauthorized -> showLog("Unauthorized")
             }

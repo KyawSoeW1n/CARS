@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class GetCarListViewModel @Inject constructor(
+class CarListViewModel @Inject constructor(
     private val fetchCarListUseCaseImpl: FetchCarListUseCaseImpl,
     private val getCarListImpl: GetCarListImpl
 ) : BaseViewModel() {
