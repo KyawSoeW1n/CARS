@@ -3,12 +3,10 @@ package com.sevenpeakssoftware.kyawsoewin.ui.fragment
 import android.view.LayoutInflater
 import androidx.fragment.app.viewModels
 import com.sevenpeakssoftware.kyawsoewin.databinding.FragmentCarListBinding
-import com.sevenpeakssoftware.kyawsoewin.extensions.removeAdapter
-import com.sevenpeakssoftware.kyawsoewin.extensions.setUpCustomAdapter
-import com.sevenpeakssoftware.kyawsoewin.extensions.showLog
-import com.sevenpeakssoftware.kyawsoewin.extensions.showToast
+import com.sevenpeakssoftware.kyawsoewin.extensions.*
 import com.sevenpeakssoftware.kyawsoewin.presentation.CarListViewModel
 import com.sevenpeakssoftware.kyawsoewin.presentation.ViewState
+import com.sevenpeakssoftware.kyawsoewin.ui.activity.MainActivity
 import com.sevenpeakssoftware.kyawsoewin.ui.adapter.CarListAdapter
 import com.sevenpeakssoftware.kyawsoewin.ui.base.fragment.BaseViewBindingFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,6 +24,7 @@ class CarFragment : BaseViewBindingFragment<FragmentCarListBinding>() {
 
     override fun setUp() {
         super.setUp()
+        (requireActivity() as MainActivity).supportActionBar?.show()
         binding.rvCar.setUpCustomAdapter(isLinear = true, adapterName = carListAdapter)
     }
 
@@ -33,7 +32,12 @@ class CarFragment : BaseViewBindingFragment<FragmentCarListBinding>() {
         super.observe()
 
         carListViewModel.cacheCarListLiveData.observe(viewLifecycleOwner) {
-            carListAdapter.submitList(it)
+            if (it.isEmpty()) {
+                binding.txtNoData.hideView()
+            } else {
+                binding.txtNoData.showView()
+                carListAdapter.submitList(it)
+            }
         }
         carListViewModel.carListLiveData.observe(viewLifecycleOwner) {
             when (it) {

@@ -5,6 +5,7 @@ import com.sevenpeakssoftware.kyawsoewin.R
 import com.sevenpeakssoftware.kyawsoewin.databinding.FragmentSplashBinding
 import com.sevenpeakssoftware.kyawsoewin.extensions.doNavigation
 import com.sevenpeakssoftware.kyawsoewin.extensions.onAnimationListener
+import com.sevenpeakssoftware.kyawsoewin.ui.activity.MainActivity
 import com.sevenpeakssoftware.kyawsoewin.ui.base.fragment.BaseViewBindingFragment
 
 class SplashFragment : BaseViewBindingFragment<FragmentSplashBinding>() {
@@ -14,6 +15,7 @@ class SplashFragment : BaseViewBindingFragment<FragmentSplashBinding>() {
     override fun setUp() {
         super.setUp()
 
+        (requireActivity() as MainActivity).supportActionBar?.hide()
         binding.motionLayout.onAnimationListener {
             requireView().doNavigation(R.id.action_navigation_splash_to_avigation_car_list)
         }
