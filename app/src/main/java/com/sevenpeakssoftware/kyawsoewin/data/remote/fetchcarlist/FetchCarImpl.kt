@@ -1,6 +1,6 @@
-package com.sevenpeakssoftware.kyawsoewin.data.remote.impl.fetchcarlist
+package com.sevenpeakssoftware.kyawsoewin.data.remote.fetchcarlist
 
-import com.sevenpeakssoftware.kyawsoewin.domain.remote.fetchcarlist.FetchCarListRepo
+import com.sevenpeakssoftware.kyawsoewin.domain.interactor.remote.fetchcarlist.FetchCarListRepo
 import com.sevenpeakssoftware.kyawsoewin.network.ApiService
 import com.sevenpeakssoftware.kyawsoewin.network.executeOrThrow
 import javax.inject.Inject
@@ -9,5 +9,4 @@ import javax.inject.Inject
 class FetchCarImpl @Inject constructor(private val apiService: ApiService) :
     FetchCarListRepo {
     override suspend fun getCarList() = apiService.getCarList().executeOrThrow()
-
 }

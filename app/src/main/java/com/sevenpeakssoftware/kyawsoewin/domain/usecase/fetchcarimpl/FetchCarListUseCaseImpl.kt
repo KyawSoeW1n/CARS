@@ -1,12 +1,12 @@
 package com.sevenpeakssoftware.kyawsoewin.domain.usecase.fetchcarimpl
 
 import android.content.Context
-import com.sevenpeakssoftware.kyawsoewin.data.cache.impl.insertcar.InsertCarListImpl
-import com.sevenpeakssoftware.kyawsoewin.data.remote.mapper.CarListMapper
-import com.sevenpeakssoftware.kyawsoewin.data.remote.model.fetchcarlist.CarListVO
-import com.sevenpeakssoftware.kyawsoewin.domain.remote.fetchcarlist.FetchCarListRepo
+import com.sevenpeakssoftware.kyawsoewin.data.cache.insertcar.InsertCarListImpl
+import com.sevenpeakssoftware.kyawsoewin.domain.interactor.remote.fetchcarlist.FetchCarListRepo
+import com.sevenpeakssoftware.kyawsoewin.domain.model.fetchcarlist.CarListVO
 import com.sevenpeakssoftware.kyawsoewin.domain.usecase.UseCaseState
 import com.sevenpeakssoftware.kyawsoewin.extensions.isOnline
+import com.sevenpeakssoftware.kyawsoewin.mapper.CarListMapper
 import com.sevenpeakssoftware.kyawsoewin.network.safeApiCall
 import com.sevenpeakssoftware.kyawsoewin.presentation.ViewState
 import dagger.hilt.android.qualifiers.ApplicationContext

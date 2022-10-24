@@ -1,7 +1,7 @@
-package com.sevenpeakssoftware.kyawsoewin.data.cache.impl.getcar
+package com.sevenpeakssoftware.kyawsoewin.data.cache.getcar
 
-import com.sevenpeakssoftware.kyawsoewin.data.cache.dao.CarDao
-import com.sevenpeakssoftware.kyawsoewin.data.remote.model.fetchcarlist.CarItemVO
+import com.sevenpeakssoftware.kyawsoewin.cache.dao.CarDao
+import com.sevenpeakssoftware.kyawsoewin.domain.model.fetchcarlist.CarItemVO
 import javax.inject.Inject
 
 class GetCarListImpl @Inject constructor(private val carDao: CarDao) : GetCarListRepo {

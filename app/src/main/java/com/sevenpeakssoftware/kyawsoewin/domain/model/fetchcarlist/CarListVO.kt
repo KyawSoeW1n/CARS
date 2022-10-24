@@ -1,6 +1,6 @@
-package com.sevenpeakssoftware.kyawsoewin.data.remote.model.fetchcarlist
+package com.sevenpeakssoftware.kyawsoewin.domain.model.fetchcarlist
 
-import com.sevenpeakssoftware.kyawsoewin.network.response.getcar.CarListResponse
+import com.sevenpeakssoftware.kyawsoewin.network.response.getcar.CarListResponseData
 
 class CarListVO constructor(
     val carList: MutableList<CarItemVO>
@@ -9,8 +9,8 @@ class CarListVO constructor(
         val carList: MutableList<CarItemVO> = mutableListOf(),
     ) {
 
-        fun carList(carListResponse: CarListResponse) = apply {
-            carList.addAll(carListResponse.content.map {
+        fun carList(carListResponseData: CarListResponseData) = apply {
+            carList.addAll(carListResponseData.content.map {
                 CarItemVO(
                     id = it.id,
                     dateTime = it.dateTime,

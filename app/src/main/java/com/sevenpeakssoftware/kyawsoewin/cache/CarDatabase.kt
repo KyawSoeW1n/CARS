@@ -1,9 +1,9 @@
-package com.sevenpeakssoftware.kyawsoewin.data.cache
+package com.sevenpeakssoftware.kyawsoewin.cache
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.sevenpeakssoftware.kyawsoewin.data.cache.dao.CarDao
-import com.sevenpeakssoftware.kyawsoewin.data.cache.entity.CacheCar
+import com.sevenpeakssoftware.kyawsoewin.cache.dao.CarDao
+import com.sevenpeakssoftware.kyawsoewin.cache.entity.CacheCar
 
 @Database(
     entities = [CacheCar::class],

@@ -1,11 +1,11 @@
-package com.sevenpeakssoftware.kyawsoewin.data.cache.dao
+package com.sevenpeakssoftware.kyawsoewin.cache.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.sevenpeakssoftware.kyawsoewin.data.cache.DatabaseConstants
-import com.sevenpeakssoftware.kyawsoewin.data.cache.entity.CacheCar
+import com.sevenpeakssoftware.kyawsoewin.cache.DatabaseConstants
+import com.sevenpeakssoftware.kyawsoewin.cache.entity.CacheCar
 
 @Dao
 interface CarDao {

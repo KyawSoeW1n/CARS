@@ -2,9 +2,9 @@ package com.sevenpeakssoftware.kyawsoewin.presentation
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.sevenpeakssoftware.kyawsoewin.data.cache.impl.getcar.GetCarListImpl
-import com.sevenpeakssoftware.kyawsoewin.data.remote.model.fetchcarlist.CarItemVO
-import com.sevenpeakssoftware.kyawsoewin.data.remote.model.fetchcarlist.CarListVO
+import com.sevenpeakssoftware.kyawsoewin.data.cache.getcar.GetCarListImpl
+import com.sevenpeakssoftware.kyawsoewin.domain.model.fetchcarlist.CarItemVO
+import com.sevenpeakssoftware.kyawsoewin.domain.model.fetchcarlist.CarListVO
 import com.sevenpeakssoftware.kyawsoewin.domain.usecase.fetchcarimpl.FetchCarListUseCaseImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
