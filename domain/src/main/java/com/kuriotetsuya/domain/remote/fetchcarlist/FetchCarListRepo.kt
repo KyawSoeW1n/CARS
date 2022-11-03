@@ -1,4 +1,4 @@
-package com.sevenpeakssoftware.kyawsoewin.domain.interactor.remote.fetchcarlist
+package com.kuriotetsuya.domain.remote.fetchcarlist
 
 import com.sevenpeakssoftware.kyawsoewin.network.response.getcar.CarListResponseData
 

@@ -1,4 +1,4 @@
-package com.sevenpeakssoftware.kyawsoewin.domain.model.fetchcarlist
+package com.kuriotetsuya.domain.model.fetchcarlist
 
 import com.sevenpeakssoftware.kyawsoewin.network.response.getcar.CarListResponseData
 

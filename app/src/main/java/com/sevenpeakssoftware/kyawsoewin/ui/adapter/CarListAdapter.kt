@@ -2,7 +2,7 @@ package com.sevenpeakssoftware.kyawsoewin.ui.adapter
 
 import android.view.ViewGroup
 import com.sevenpeakssoftware.kyawsoewin.databinding.ListItemCarBinding
-import com.sevenpeakssoftware.kyawsoewin.domain.model.fetchcarlist.CarItemVO
+import com.kuriotetsuya.domain.model.fetchcarlist.CarItemVO
 import com.sevenpeakssoftware.kyawsoewin.extensions.adapterViewBinding
 import com.sevenpeakssoftware.kyawsoewin.extensions.diffCallBackWith
 import com.sevenpeakssoftware.kyawsoewin.ui.base.adapter.BaseListAdapter

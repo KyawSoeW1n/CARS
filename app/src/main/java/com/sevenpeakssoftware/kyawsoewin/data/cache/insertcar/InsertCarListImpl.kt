@@ -4,7 +4,7 @@ import android.content.Context
 import android.text.format.DateFormat
 import com.sevenpeakssoftware.kyawsoewin.cache.dao.CarDao
 import com.sevenpeakssoftware.kyawsoewin.cache.entity.CacheCar
-import com.sevenpeakssoftware.kyawsoewin.domain.model.fetchcarlist.CarItemVO
+import com.kuriotetsuya.domain.model.fetchcarlist.CarItemVO
 import com.sevenpeakssoftware.kyawsoewin.extensions.*
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

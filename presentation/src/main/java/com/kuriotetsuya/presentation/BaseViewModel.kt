@@ -1,4 +1,4 @@
-package com.sevenpeakssoftware.kyawsoewin.presentation
+package com.kuriotetsuya.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

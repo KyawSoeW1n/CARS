@@ -1,4 +1,4 @@
-package com.sevenpeakssoftware.kyawsoewin.domain.model.fetchcarlist
+package com.kuriotetsuya.domain.model.fetchcarlist
 
 data class CarItemVO(
     val id: Int,

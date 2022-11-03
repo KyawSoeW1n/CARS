@@ -61,9 +61,13 @@ dependencies {
 
     def mobileUiDependencies = rootProject.ext.mobileUiDependencies
     def remoteDependencies = rootProject.ext.remoteDependencies
-    def presentationDependencies = rootProject.ext.presentationDependencies
     def cacheDependencies = rootProject.ext.cacheDependencies
     def coreDependencies = rootProject.ext.coreDependencies
+    def coroutine = rootProject.ext.coroutine
+    def diDependencies = rootProject.ext.diDependencies
+
+    implementation project(':presentation')
+    implementation project(':domain')
 
     implementation mobileUiDependencies.material
     implementation mobileUiDependencies.constraintLayout
@@ -77,13 +81,10 @@ dependencies {
     implementation mobileUiDependencies.recyclerView
     implementation mobileUiDependencies.shimmerEffect
     implementation mobileUiDependencies.dimen
-    implementation mobileUiDependencies.coroutine
     implementation mobileUiDependencies.rxAndroid
     implementation mobileUiDependencies.rxKotlin
-    implementation mobileUiDependencies.hiltFragment
 
-    implementation presentationDependencies.liveDataKtx
-    implementation presentationDependencies.viewModelKtx
+    implementation coroutine.coroutine
 
     implementation remoteDependencies.retrofit
     implementation remoteDependencies.okHttp
@@ -95,8 +96,9 @@ dependencies {
     kapt cacheDependencies.roomCompiler
 
     //Hilt
-    implementation mobileUiDependencies.hilt
-    kapt mobileUiDependencies.hiltCompiler
+    implementation diDependencies.hilt
+    implementation diDependencies.hiltFragment
+    kapt diDependencies.hiltCompiler
 
     kapt coreDependencies.metaData
 

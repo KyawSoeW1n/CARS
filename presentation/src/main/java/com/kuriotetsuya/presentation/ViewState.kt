@@ -1,4 +1,4 @@
-package com.sevenpeakssoftware.kyawsoewin.presentation
+package com.kuriotetsuya.presentation
 
 sealed class ViewState<out T> {
 
