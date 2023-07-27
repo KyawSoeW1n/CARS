@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import androidx.fragment.app.viewModels
 import com.sevenpeakssoftware.kyawsoewin.databinding.FragmentCarListBinding
 import com.sevenpeakssoftware.kyawsoewin.extensions.*
-import com.kuriotetsuya.presentation.CarListViewModel
-import com.kuriotetsuya.presentation.ViewState
+import com.sevenpeakssoftware.kyawsoewin.presentation.CarListViewModel
+import com.sevenpeakssoftware.kyawsoewin.presentation.ViewState
 import com.sevenpeakssoftware.kyawsoewin.ui.activity.MainActivity
 import com.sevenpeakssoftware.kyawsoewin.ui.adapter.CarListAdapter
 import com.sevenpeakssoftware.kyawsoewin.ui.base.fragment.BaseViewBindingFragment
@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class CarFragment : BaseViewBindingFragment<FragmentCarListBinding>() {
 
-    private val carListViewModel: com.kuriotetsuya.presentation.CarListViewModel by viewModels()
+    private val carListViewModel: CarListViewModel by viewModels()
     override fun bindView(inflater: LayoutInflater): FragmentCarListBinding =
         FragmentCarListBinding.inflate(inflater)
 
@@ -41,27 +41,27 @@ class CarFragment : BaseViewBindingFragment<FragmentCarListBinding>() {
         }
         carListViewModel.carListLiveData.observe(viewLifecycleOwner) {
             when (it) {
-                is com.kuriotetsuya.presentation.ViewState.Success -> {
+                is ViewState.Success -> {
                     carListViewModel.getCacheList()
                 }
-                is com.kuriotetsuya.presentation.ViewState.NetworkError -> {
+                is ViewState.NetworkError -> {
                     carListViewModel.getCacheList()
                 }
-                is com.kuriotetsuya.presentation.ViewState.Loading -> {
+                is ViewState.Loading -> {
                 }
-                is com.kuriotetsuya.presentation.ViewState.ServerError -> {
+                is ViewState.ServerError -> {
                     showToast("Server Error")
                     carListViewModel.getCacheList()
                 }
-                is com.kuriotetsuya.presentation.ViewState.ResourceNotFound -> {
+                is ViewState.ResourceNotFound -> {
                     showToast("Resource Not Found Error")
                     carListViewModel.getCacheList()
                 }
-                is com.kuriotetsuya.presentation.ViewState.Error -> {
+                is ViewState.Error -> {
                     showToast(it.message)
                     carListViewModel.getCacheList()
                 }
-                is com.kuriotetsuya.presentation.ViewState.Unauthorized -> showLog("Unauthorized")
+                is ViewState.Unauthorized -> showLog("Unauthorized")
             }
         }
     }

@@ -1,6 +1,7 @@
 package com.sevenpeakssoftware.kyawsoewin.data.cache.getcar
 
-import com.kuriotetsuya.domain.model.fetchcarlist.CarItemVO
+import com.sevenpeakssoftware.kyawsoewin.domain.model.CarItemVO
+
 
 interface GetCarListRepo {
     fun getCarList(): MutableList<CarItemVO>

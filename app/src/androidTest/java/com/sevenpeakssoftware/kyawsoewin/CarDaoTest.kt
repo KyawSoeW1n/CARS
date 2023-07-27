@@ -1,9 +1,9 @@
 package com.sevenpeakssoftware.kyawsoewin
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.sevenpeakssoftware.kyawsoewin.data.cache.CarDatabase
-import com.sevenpeakssoftware.kyawsoewin.data.cache.dao.CarDao
-import com.sevenpeakssoftware.kyawsoewin.data.cache.entity.CacheCar
+import com.sevenpeakssoftware.kyawsoewin.cache.CarDatabase
+import com.sevenpeakssoftware.kyawsoewin.cache.dao.CarDao
+import com.sevenpeakssoftware.kyawsoewin.cache.entity.CacheCar
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.test.runTest

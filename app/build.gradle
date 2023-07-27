@@ -65,6 +65,7 @@ dependencies {
     def cacheDependencies = rootProject.ext.cacheDependencies
     def coreDependencies = rootProject.ext.coreDependencies
     def testDependencies = rootProject.ext.testDependencies
+    def diDependencies = rootProject.ext.diDependencies
 
     implementation mobileUiDependencies.material
     implementation mobileUiDependencies.constraintLayout
@@ -78,10 +79,8 @@ dependencies {
     implementation mobileUiDependencies.recyclerView
     implementation mobileUiDependencies.shimmerEffect
     implementation mobileUiDependencies.dimen
-    implementation mobileUiDependencies.coroutine
     implementation mobileUiDependencies.rxAndroid
     implementation mobileUiDependencies.rxKotlin
-    implementation mobileUiDependencies.hiltFragment
 
     implementation presentationDependencies.liveDataKtx
     implementation presentationDependencies.viewModelKtx
@@ -95,10 +94,8 @@ dependencies {
     implementation cacheDependencies.roomktx
     kapt cacheDependencies.roomCompiler
 
-    //Hilt
-    implementation mobileUiDependencies.hilt
 
-    kapt mobileUiDependencies.hiltCompiler
+
 
     kapt coreDependencies.metaData
 
@@ -106,10 +103,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-//    kaptTest 'com.google.dagger:hilt-android-compiler:2.44'
-//    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.44'
-    kaptTest mobileUiDependencies.hiltCompiler
-    kaptAndroidTest mobileUiDependencies.hiltCompiler
+    //Hilt
+    implementation diDependencies.hilt
+    kapt diDependencies.hiltCompiler
+    implementation diDependencies.hiltFragment
+    kaptTest diDependencies.hiltCompiler
+    kaptAndroidTest diDependencies.hiltCompiler
 
     testImplementation testDependencies.archCoreTest
     androidTestImplementation testDependencies.archCoreTest

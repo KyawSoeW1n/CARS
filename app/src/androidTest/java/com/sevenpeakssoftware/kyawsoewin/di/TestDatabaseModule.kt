@@ -2,15 +2,15 @@ package com.sevenpeakssoftware.kyawsoewin.di
 
 import android.content.Context
 import androidx.room.Room
-import com.sevenpeakssoftware.kyawsoewin.data.cache.CarDatabase
-import com.sevenpeakssoftware.kyawsoewin.data.cache.DatabaseConstants
+import com.sevenpeakssoftware.kyawsoewin.cache.CarDatabase
+import com.sevenpeakssoftware.kyawsoewin.cache.DatabaseConstants
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 import dagger.hilt.testing.TestInstallIn
+import javax.inject.Singleton
+
 @Module
 @TestInstallIn(components = [SingletonComponent::class], replaces = [CacheModule::class])
 class TestDatabaseModule {
