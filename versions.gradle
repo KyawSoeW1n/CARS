@@ -33,10 +33,7 @@ ext {
     hiltFragment = "1.0.0"
     metaData = "0.5.0"
 
-    archCoreTesting = "2.2.0"
-    coroutineTest = "1.7.1"
-
-    debugDependencies = [
+    debugWorkDependencies = [
             "leakCanary": "com.squareup.leakcanary:leakcanary-android:${leakCanary}"
     ]
 
@@ -88,11 +85,5 @@ ext {
 
     coreDependencies = [
             metaData: "org.jetbrains.kotlinx:kotlinx-metadata-jvm:${metaData}"
-    ]
-
-    testDependencies = [
-            archCoreTest      : "androidx.arch.core:core-testing:${archCoreTesting}",
-            hiltAndroidTesting: "com.google.dagger:hilt-android-testing:${hilt}",
-            coroutineTest     : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${coroutineTest}"
     ]
 }

@@ -11,5 +11,5 @@ import com.sevenpeakssoftware.kyawsoewin.cache.entity.CacheCar
     exportSchema = true
 )
 abstract class CarDatabase : RoomDatabase() {
-    abstract fun getCarDao(): CarDao
+    abstract fun carDao(): CarDao
 }

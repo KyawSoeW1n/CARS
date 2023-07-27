@@ -16,7 +16,7 @@ import javax.inject.Singleton
 class CacheModule {
     @Singleton
     @Provides
-    fun provideAppDatabase(
+    fun provideYourDatabase(
         @ApplicationContext app: Context
     ) = Room.databaseBuilder(
         app,
@@ -26,5 +26,5 @@ class CacheModule {
 
     @Singleton
     @Provides
-    fun provideYourDao(db: CarDatabase) = db.getCarDao()
+    fun provideYourDao(db: CarDatabase) = db.carDao()
 }
