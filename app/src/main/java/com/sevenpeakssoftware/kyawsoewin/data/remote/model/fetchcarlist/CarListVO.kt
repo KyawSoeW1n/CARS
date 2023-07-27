@@ -12,11 +12,11 @@ class CarListVO constructor(
         fun carList(carListResponse: CarListResponse) = apply {
             carList.addAll(carListResponse.content.map {
                 CarItemVO(
-                    id = it.id,
-                    dateTime = it.dateTime,
-                    image = it.image,
-                    title = it.title,
-                    ingress = it.ingress
+                    id = it.id ?: 0,
+                    dateTime = it.dateTime ?: "",
+                    image = it.image ?: "",
+                    title = it.title ?: "",
+                    ingress = it.ingress ?: ""
                 )
             })
         }

@@ -10,10 +10,10 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
-
+import dagger.hilt.testing.TestInstallIn
 @Module
-@InstallIn(SingletonComponent::class)
-class CacheModule {
+@TestInstallIn(components = [SingletonComponent::class], replaces = [CacheModule::class])
+class TestDatabaseModule {
     @Singleton
     @Provides
     fun provideAppDatabase(
