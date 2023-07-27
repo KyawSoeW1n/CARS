@@ -1,12 +1,14 @@
-package com.kuriotetsuya.presentation
+package com.sevenpeakssoftware.kyawsoewin.presentation
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.kuriotetsuya.domain.fetchcarimpl.FetchCarListUseCaseImpl
-import com.kuriotetsuya.domain.model.fetchcarlist.CarItemVO
-import com.kuriotetsuya.domain.model.fetchcarlist.CarListVO
+import com.sevenpeakssoftware.kyawsoewin.data.cache.getcar.GetCarListImpl
+import com.sevenpeakssoftware.kyawsoewin.domain.model.CarItemVO
+import com.sevenpeakssoftware.kyawsoewin.domain.model.CarListVO
+import com.sevenpeakssoftware.kyawsoewin.domain.usecase.fetchcarimpl.FetchCarListUseCaseImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -26,19 +28,17 @@ class CarListViewModel @Inject constructor(
 
     init {
         fetchCarList()
-
     }
 
     fun getCacheList() {
         viewModelScope.launch(Dispatchers.IO) {
-
             cacheCarListLiveData.postValue(getCarListImpl.getCarList())
         }
     }
 
     private fun fetchCarList() {
         viewModelScope.launch(Dispatchers.IO) {
-            fetchCarListUseCaseImpl.getCarList().collect {
+            fetchCarListUseCaseImpl.getCarList().collectLatest {
                 carListLiveData.postValue(it)
             }
         }

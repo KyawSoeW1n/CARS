@@ -1,4 +1,4 @@
-package com.kuriotetsuya.domain.model.fetchcarlist
+package com.sevenpeakssoftware.kyawsoewin.domain.model
 
 import com.sevenpeakssoftware.kyawsoewin.network.response.getcar.CarListResponseData
 
@@ -12,11 +12,11 @@ class CarListVO constructor(
         fun carList(carListResponseData: CarListResponseData) = apply {
             carList.addAll(carListResponseData.content.map {
                 CarItemVO(
-                    id = it.id,
-                    dateTime = it.dateTime,
-                    image = it.image,
-                    title = it.title,
-                    ingress = it.ingress
+                    id = it.id ?: 0,
+                    dateTime = it.dateTime ?: "",
+                    image = it.image ?: "",
+                    title = it.title ?: "",
+                    ingress = it.ingress ?: ""
                 )
             })
         }

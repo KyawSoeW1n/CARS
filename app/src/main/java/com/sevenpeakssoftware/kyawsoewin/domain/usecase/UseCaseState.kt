@@ -1,4 +1,4 @@
-package com.kuriotetsuya.domain
+package com.sevenpeakssoftware.kyawsoewin.domain.usecase
 
 sealed class UseCaseState<out T> {
 

@@ -3,7 +3,7 @@ package com.sevenpeakssoftware.kyawsoewin.network
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.google.gson.JsonSyntaxException
-import com.kuriotetsuya.domain.UseCaseState
+import com.sevenpeakssoftware.kyawsoewin.domain.usecase.UseCaseState
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

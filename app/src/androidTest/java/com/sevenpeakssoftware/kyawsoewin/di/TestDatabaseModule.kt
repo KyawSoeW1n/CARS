@@ -6,17 +6,17 @@ import com.sevenpeakssoftware.kyawsoewin.cache.CarDatabase
 import com.sevenpeakssoftware.kyawsoewin.cache.DatabaseConstants
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import dagger.hilt.testing.TestInstallIn
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
-class CacheModule {
+@TestInstallIn(components = [SingletonComponent::class], replaces = [CacheModule::class])
+class TestDatabaseModule {
     @Singleton
     @Provides
-    fun provideYourDatabase(
+    fun provideAppDatabase(
         @ApplicationContext app: Context
     ) = Room.databaseBuilder(
         app,

@@ -8,12 +8,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.sevenpeakssoftware.kyawsoewin"
         minSdk 21
-        targetSdk 32
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -64,6 +64,7 @@ dependencies {
     def presentationDependencies = rootProject.ext.presentationDependencies
     def cacheDependencies = rootProject.ext.cacheDependencies
     def coreDependencies = rootProject.ext.coreDependencies
+    def diDependencies = rootProject.ext.diDependencies
 
     implementation mobileUiDependencies.material
     implementation mobileUiDependencies.constraintLayout
@@ -77,10 +78,9 @@ dependencies {
     implementation mobileUiDependencies.recyclerView
     implementation mobileUiDependencies.shimmerEffect
     implementation mobileUiDependencies.dimen
-    implementation mobileUiDependencies.coroutine
     implementation mobileUiDependencies.rxAndroid
     implementation mobileUiDependencies.rxKotlin
-    implementation mobileUiDependencies.hiltFragment
+
 
     implementation presentationDependencies.liveDataKtx
     implementation presentationDependencies.viewModelKtx
@@ -95,12 +95,25 @@ dependencies {
     kapt cacheDependencies.roomCompiler
 
     //Hilt
-    implementation mobileUiDependencies.hilt
-    kapt mobileUiDependencies.hiltCompiler
+    implementation diDependencies.hilt
+    kapt diDependencies.hiltCompiler
+    implementation diDependencies.hiltFragment
+    kaptTest diDependencies.hiltCompiler
+    kaptAndroidTest diDependencies.hiltCompiler
 
     kapt coreDependencies.metaData
 
+    testImplementation testDependencies.archCoreTest
+    androidTestImplementation testDependencies.archCoreTest
+
+    androidTestImplementation testDependencies.hiltAndroidTesting
+
+    // For Robolectric tests.
+    testImplementation testDependencies.hiltAndroidTesting
+
+    implementation testDependencies.coroutineTest
+
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }

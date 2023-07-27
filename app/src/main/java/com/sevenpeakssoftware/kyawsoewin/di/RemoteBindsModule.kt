@@ -1,7 +1,7 @@
 package com.sevenpeakssoftware.kyawsoewin.di
 
 import com.sevenpeakssoftware.kyawsoewin.data.remote.fetchcarlist.FetchCarImpl
-import com.kuriotetsuya.domain.remote.fetchcarlist.FetchCarListRepo
+import com.sevenpeakssoftware.kyawsoewin.domain.remote.fetchcarlist.FetchCarListRepo
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
