@@ -26,5 +26,5 @@ class CacheModule {
 
     @Singleton
     @Provides
-    fun provideYourDao(db: CarDatabase) = db.carDao()
+    fun provideYourDao(db: CarDatabase) = db.getCarDao()
 }
