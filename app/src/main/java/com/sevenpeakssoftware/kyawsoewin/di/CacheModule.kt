@@ -2,8 +2,8 @@ package com.sevenpeakssoftware.kyawsoewin.di
 
 import android.content.Context
 import androidx.room.Room
-import com.sevenpeakssoftware.kyawsoewin.data.cache.CarDatabase
-import com.sevenpeakssoftware.kyawsoewin.data.cache.DatabaseConstants
+import com.sevenpeakssoftware.kyawsoewin.cache.CarDatabase
+import com.sevenpeakssoftware.kyawsoewin.cache.DatabaseConstants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

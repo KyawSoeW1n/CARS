@@ -19,7 +19,6 @@ ext {
     liveDataktx = "2.4.1"
     lifecycleScopektx = "2.3.1"
     viewModelScopeKtx = "2.3.1"
-    coroutine = "1.6.0"
 
     retrofit = "2.9.0"
     okHttp = "4.9.1"
@@ -54,12 +53,18 @@ ext {
             timber            : "com.jakewharton.timber:timber:${timber}",
             dataStore         : "androidx.datastore:datastore-preferences:${dataStore}",
             recyclerView      : "androidx.recyclerview:recyclerview:${recyclerView}",
-            coroutine         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutine}",
             rxKotlin          : "io.reactivex.rxjava2:rxkotlin:${rxKotlin}",
             rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroid}",
-            hilt              : "com.google.dagger:hilt-android:${hilt}",
-            hiltCompiler      : "com.google.dagger:hilt-android-compiler:${hilt}",
-            hiltFragment      : "androidx.hilt:hilt-navigation-fragment:${hiltFragment}"
+    ]
+
+    coroutine = [
+            coroutine: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutine}"
+    ]
+
+    diDependencies = [
+            hilt        : "com.google.dagger:hilt-android:${hilt}",
+            hiltCompiler: "com.google.dagger:hilt-android-compiler:${hilt}",
+            hiltFragment: "androidx.hilt:hilt-navigation-fragment:${hiltFragment}"
     ]
 
     presentationDependencies = [
