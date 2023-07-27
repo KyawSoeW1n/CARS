@@ -16,7 +16,7 @@ class CarListVO constructor(
                     dateTime = it.dateTime ?: "",
                     image = it.image ?: "",
                     title = it.title ?: "",
-                    ingress = it.ingress ?: ""
+                    ingress = it.ingress ?: "",
                 )
             })
         }
