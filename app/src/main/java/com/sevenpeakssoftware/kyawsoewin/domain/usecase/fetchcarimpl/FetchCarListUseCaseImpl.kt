@@ -2,6 +2,7 @@ package com.sevenpeakssoftware.kyawsoewin.domain.usecase.fetchcarimpl
 
 import android.content.Context
 import com.sevenpeakssoftware.kyawsoewin.data.cache.insertcar.InsertCarListImpl
+import com.sevenpeakssoftware.kyawsoewin.domain.model.CarItemVO
 import com.sevenpeakssoftware.kyawsoewin.domain.model.CarListVO
 import com.sevenpeakssoftware.kyawsoewin.domain.remote.fetchcarlist.FetchCarListRepo
 import com.sevenpeakssoftware.kyawsoewin.domain.usecase.UseCaseState
@@ -42,6 +43,7 @@ class FetchCarListUseCaseImpl @Inject constructor(
                             emit(ViewState.Error("Error"))
                         }
                     }
+
                     is UseCaseState.Error -> emit(ViewState.Error(response.message))
                     is UseCaseState.ResourceNotFound -> emit(ViewState.ResourceNotFound)
                     is UseCaseState.ServerError -> emit(ViewState.ServerError)

@@ -8,6 +8,7 @@ import com.sevenpeakssoftware.kyawsoewin.presentation.CarListViewModel
 import com.sevenpeakssoftware.kyawsoewin.presentation.ViewState
 import com.sevenpeakssoftware.kyawsoewin.ui.activity.MainActivity
 import com.sevenpeakssoftware.kyawsoewin.ui.adapter.CarListAdapter
+import com.sevenpeakssoftware.kyawsoewin.ui.adapter.MultipleCarListAdapter
 import com.sevenpeakssoftware.kyawsoewin.ui.base.fragment.BaseViewBindingFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,14 +19,18 @@ class CarFragment : BaseViewBindingFragment<FragmentCarListBinding>() {
     override fun bindView(inflater: LayoutInflater): FragmentCarListBinding =
         FragmentCarListBinding.inflate(inflater)
 
-    private val carListAdapter: CarListAdapter by lazy {
-        CarListAdapter()
+//    private val carListAdapter: CarListAdapter by lazy {
+//        CarListAdapter()
+//    }
+
+    private val carListAdapter: MultipleCarListAdapter by lazy {
+        MultipleCarListAdapter()
     }
 
     override fun setUp() {
         super.setUp()
         (requireActivity() as MainActivity).supportActionBar?.show()
-        binding.rvCar.setUpCustomAdapter(isLinear = true, adapterName = carListAdapter)
+        binding.rvCar.setMultipleAdapter(isLinear = true, adapterName = carListAdapter)
     }
 
     override fun observe() {
@@ -33,9 +38,9 @@ class CarFragment : BaseViewBindingFragment<FragmentCarListBinding>() {
 
         carListViewModel.cacheCarListLiveData.observe(viewLifecycleOwner) {
             if (it.isEmpty()) {
-                binding.txtNoData.hideView()
-            } else {
                 binding.txtNoData.showView()
+            } else {
+                binding.txtNoData.hideView()
                 carListAdapter.submitList(it)
             }
         }
