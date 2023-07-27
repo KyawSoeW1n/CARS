@@ -1,8 +1,8 @@
 package com.sevenpeakssoftware.kyawsoewin.domain.remote.fetchcarlist
 
-import com.sevenpeakssoftware.kyawsoewin.network.response.getcar.CarListResponse
+import com.sevenpeakssoftware.kyawsoewin.network.response.getcar.CarListResponseData
 
 
 interface FetchCarListRepo {
-    suspend fun getCarList(): CarListResponse
+    suspend fun getCarList(): CarListResponseData
 }

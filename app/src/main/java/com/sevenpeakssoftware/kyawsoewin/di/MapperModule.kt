@@ -1,6 +1,6 @@
 package com.sevenpeakssoftware.kyawsoewin.di
 
-import com.sevenpeakssoftware.kyawsoewin.data.remote.mapper.CarListMapper
+import com.sevenpeakssoftware.kyawsoewin.mapper.CarListMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

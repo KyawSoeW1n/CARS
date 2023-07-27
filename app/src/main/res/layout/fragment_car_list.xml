@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/list_item_car" />
 
-    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_no_data"
         android:layout_width="0dp"
         android:visibility="gone"

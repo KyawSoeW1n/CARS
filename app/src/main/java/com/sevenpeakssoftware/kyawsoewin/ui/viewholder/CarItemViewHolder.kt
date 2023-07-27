@@ -1,7 +1,7 @@
 package com.sevenpeakssoftware.kyawsoewin.ui.viewholder
 
-import com.sevenpeakssoftware.kyawsoewin.data.remote.model.fetchcarlist.CarItemVO
 import com.sevenpeakssoftware.kyawsoewin.databinding.ListItemCarBinding
+import com.sevenpeakssoftware.kyawsoewin.domain.model.CarItemVO
 import com.sevenpeakssoftware.kyawsoewin.extensions.showImage
 import com.sevenpeakssoftware.kyawsoewin.ui.base.viewholder.BaseViewHolder
 
